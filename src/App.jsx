@@ -4,10 +4,13 @@ import './App.css'
 import Banner from './components/Banner/Banner'
 import Navbar from './components/Navbar/Navbar'
 import Categories from './components/Categories/Categories'
+import ShowCategory from './components/ShowCategory/ShowCategory'
 
 function App() {
 
   const [data, setData] = useState([])
+  const [categoryName, setCategoryName] = useState("")
+
 
   useEffect(()=>{
  fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
@@ -25,7 +28,8 @@ function App() {
 <Navbar></Navbar>
 <Banner></Banner>
 
-<Categories data={data}></Categories>
+<Categories setCategoryName={setCategoryName} data={data}></Categories>
+<ShowCategory categoryName={categoryName}></ShowCategory>
 
 
   </div>

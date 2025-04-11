@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Category = ({element}) => {
+const Category = ({element,setCategoryName}) => {
     const {strCategory}= element
     return (
         <div>
-            <button className='btn border-none font-bold hover:bg-blue-500 hover:text-white'>{strCategory}</button>
+            <button onClick={()=>setCategoryName(element.strCategory)} className='btn border-none font-bold hover:bg-blue-500 hover:text-white'>{strCategory}</button>
         </div>
     );
 };
