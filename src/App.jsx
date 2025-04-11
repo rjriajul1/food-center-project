@@ -1,5 +1,6 @@
 
 import './App.css'
+import Navbar from './components/Navbar/Navbar'
 // import logo from './assets/food_web_banner_29.jpg'
 
 function App() {
@@ -7,9 +8,12 @@ function App() {
   return (
     <>
   
-      <h1 className=''>Vite + React</h1>
-     
+  <div className=''>
 
+<Navbar></Navbar>
+
+  </div>
+    
     
     </>
   )
