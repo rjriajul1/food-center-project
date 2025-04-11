@@ -1,16 +1,17 @@
 
 import './App.css'
+import Banner from './components/Banner/Banner'
 import Navbar from './components/Navbar/Navbar'
-// import logo from './assets/food_web_banner_29.jpg'
 
 function App() {
 
   return (
     <>
   
-  <div className=''>
+  <div>
 
 <Navbar></Navbar>
+<Banner></Banner>
 
   </div>
     
