@@ -10,6 +10,8 @@ function App() {
 
   const [data, setData] = useState([])
   const [categoryName, setCategoryName] = useState("")
+  const [activeButton, setActiveButton] = useState(null)
+  
 
 
   useEffect(()=>{
@@ -18,7 +20,18 @@ function App() {
  .then(data=>setData(data.categories
  ))
   },[])
- 
+
+  const handleButton = (itemName,element) =>{
+    setCategoryName(itemName)
+    handleActiveButton(element)
+
+  }
+
+  const handleActiveButton = (element) =>{
+    setActiveButton(element)
+
+  }
+
 
   return (
     <>
@@ -28,8 +41,8 @@ function App() {
 <Navbar></Navbar>
 <Banner></Banner>
 
-<Categories setCategoryName={setCategoryName} data={data}></Categories>
-<ShowCategory categoryName={categoryName}></ShowCategory>
+<Categories activeButton={activeButton} handleButton={handleButton} data={data}></Categories>
+<ShowCategory  categoryName={categoryName}></ShowCategory>
 
 
   </div>
